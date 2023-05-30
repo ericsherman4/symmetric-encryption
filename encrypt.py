@@ -28,12 +28,13 @@ def bruteforce_caesar_cipher(ciphertext : str):
         print(f'{key}: {plaintext_str}')
         
 def en_decrypt_caesar(plaintext : str, key : int):
-    print(plaintext)
+    print(f"Plaintext:\t\t {plaintext}")
     cipher = encrypt_caesar_cipher(plaintext, key)
-    print(cipher)
+    print(f"Ciphertext:\t\t {cipher}")
     res = decrypt_caesar_cipher(cipher, key)
-    print(res)
+    print(f"Back to Plaintext:\t {res}")
 
+# end question 1
 # question 2
 class g:
     subtable = {
@@ -78,27 +79,36 @@ def decrypt_random(ciphertext : str) -> str:
     return ''.join(plaintext_list)
 
 def en_decrypt_random(plaintext : str):
-    print(plaintext)
+    print(f"Plaintext: {plaintext}")
     cipher = encrypt_random(plaintext)
-    print(cipher)
+    print(f"Ciphertext: {cipher}")
     res = decrypt_random(cipher)
-    print(res)
-    
+    print(f"Back to Plaintext: {res}")
 
+
+# MAIN FUNCTION
 def main():
     # question 1 
+    print("Question 1a:")
     en_decrypt_caesar("SSOEATBENEDUMHALLOHARASTREET", 5)
     # cipher = XXTJFYGJSJIZRMFQQTMFWFXYWJJY
     
-    bruteforce_caesar_cipher("HAILTOPITT")   
-    # key = ??  
-    # plaintext = ?? 
+    print("")
+    print("Question 1b")
+    bruteforce_caesar_cipher("WPXAIDEXII")   
+    # key = 15  
+    # plaintext = HAILTOPITT
+
+    print("")
+    print("Checking answer for 1b")
+    en_decrypt_caesar("HAILTOPITT", 15)
 
     # question 2
+    print("")
+    print("Question 2")
     en_decrypt_random("PITTSBURGH")
 
 
     
-
 if __name__ == "__main__":
     main()
